@@ -28,15 +28,13 @@
     <script>
         var svgStates = d3.select("svg #country"); // (1)
 
-        var projection = d3.geo.conicEqualArea(); // (2)
+        var projection = d3.geo.albersUsa(); // (2)
 
         var path = d3.geo.path()
             .projection(projection);  // (3)
 
-        // d3.json("data/MEX_adm1.json", function(error, topologies) {  // (4)
         d3.json("data/mexstates.json", function(error, topology) {  // (4)
 
-            // var state = topojson.feature(topologies[0], topologies[0].objects.stdin);  // (5)
             var state = topojson.feature(topology, topology.objects.mexstates);  // (5)
 
             svgStates.selectAll("path")  // (6)
