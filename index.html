@@ -26,23 +26,23 @@
     </svg>
     <h1>Mexico in <span id="year">1821</span></h1>
     <script>
-      var svgStates = d3.select("svg #country"); // (1)
+        var svgStates = d3.select("svg #country"); // (1)
 
-      var projection = d3.geo.conicEqualArea(); // (2)
+        var projection = d3.geo.conicEqualArea(); // (2)
 
-      var path = d3.geo.path()
-          .projection(projection);  // (3)
+        var path = d3.geo.path()
+            .projection(projection);  // (3)
 
-      d3.json("data/MEX1.json", function(error, topologies) {  // (4)
+        d3.json("data/MEX_adm1.json", function(error, topologies) {  // (4)
 
-        var state = topojson.feature(topologies[0], topologies[0].objects.stdin);  // (5)
+            var state = topojson.feature(topologies, topologies.objects.MEX_adm1);  // (5)
 
-        svgStates.selectAll("path")  // (6)
-            .data(state.features)
-            .enter()
-          .append("path")
-            .attr("d", path);
-      });
+            svgStates.selectAll("path")  // (6)
+                .data(state.features)
+                .enter()
+              .append("path")
+                .attr("d", path);
+        });
     </script>
 </body>
 </html>
