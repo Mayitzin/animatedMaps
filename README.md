@@ -5,3 +5,5 @@ This project is intended to build a Framework to create historical maps, where u
 This project is based on [bertspaan](https://github.com/bertspaan)'s [animated-borders-d3js](https://github.com/maptime-ams/animated-borders-d3js). Great tutorial!
 
 The first map start with the geopolitical evolution of the Mexican boundaries.
+
+Using [mapShaper](http://www.mapshaper.org/) to convert format of data.
