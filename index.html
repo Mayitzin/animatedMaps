@@ -7,16 +7,24 @@
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="http://d3js.org/topojson.v1.min.js"></script>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
+        * {
+          margin: 0;
+          padding: 0;
+        }
 
-      svg {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-      }
+        svg {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+        }
+        path {
+            stroke: #666;
+            fill: none;
+            fill-opacity: 0.6;
+            stroke-width: 1px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
     </style>
     <title>Animated Maps with D3.js</title>
 </head>
@@ -31,7 +39,8 @@
         var width = window.innerWidth, // (1)
             height = window.innerHeight;
         var projection = d3.geo.albersUsa()
-            .translate([width / 2, height / 2]);  // (2)
+            // .translate([width / 2, height / 2]);  // (2)
+            .translate([width / 2, 0]);  // (2)
 
         var path = d3.geo.path()
             .projection(projection);  // (3)
