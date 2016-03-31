@@ -22,18 +22,18 @@
 </head>
 <body>
     <svg>
-        <g id="states"></g>
+        <g id="country"></g>
     </svg>
     <h1>Mexico in <span id="year">1821</span></h1>
     <script>
-      var svgStates = d3.select("svg #states"); // (1)
+      var svgStates = d3.select("svg #country"); // (1)
 
-      var projection = d3.geo.albersUsa(); // (2)
+      var projection = d3.geo.conicEqualArea(); // (2)
 
       var path = d3.geo.path()
           .projection(projection);  // (3)
 
-      d3.json("data/MEX0.json", function(error, topologies) {  // (4)
+      d3.json("data/MEX1.json", function(error, topologies) {  // (4)
 
         var state = topojson.feature(topologies[0], topologies[0].objects.stdin);  // (5)
 
