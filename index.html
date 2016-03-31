@@ -28,19 +28,25 @@
     <script>
         var svgStates = d3.select("svg #country"); // (1)
 
-        var projection = d3.geo.albersUsa(); // (2)
+        var width = window.innerWidth, // (1)
+            height = window.innerHeight;
+        var projection = d3.geo.albersUsa()
+            .translate([width / 2, height / 2]);  // (2)
 
         var path = d3.geo.path()
             .projection(projection);  // (3)
 
-        d3.json("data/mexstates.json", function(error, topology) {  // (4)
+        // d3.json("data/mexstates.json", function(error, topology) {  // (4)
+        d3.json("data/mexbdy.json", function(error, Topology) {  // (4)
 
-            var state = topojson.feature(topology, topology.objects.mexstates);  // (5)
+            // Convert TopoJSON to a GeoJSON object
+            // var state = topojson.feature(topology, topology.objects.mexstates);  // (5)
+            var state = topojson.feature(Topology, Topology.objects.mexbdy);  // (5)
 
             svgStates.selectAll("path")  // (6)
                 .data(state.features)
                 .enter()
-              .append("path")
+                .append("path")
                 .attr("d", path);
         });
     </script>
