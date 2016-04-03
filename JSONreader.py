@@ -18,3 +18,8 @@ with open(fileName, 'r') as f:
 print "File",fileName,"is now",type(json_data)
 
 print json_data.keys()
+
+print len(json_data['objects'])
+print json_data['objects'].keys()
+print json_data['objects']['mexbdy'].keys()
+print json_data['objects']['mexbdy'][].keys()
