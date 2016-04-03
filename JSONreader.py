@@ -22,5 +22,5 @@ print json_data.keys()
 print len(json_data['objects'])
 print json_data['objects'].keys()
 print json_data['objects']['mexbdy'].keys()
-print json_data['objects']['mexbdy']['geometries'][0]
-print type(json_data['objects']['mexbdy']['geometries'])
+# Print Properties of each State
+print json_data['objects']['mexbdy']['geometries'][0]['properties'].keys()
