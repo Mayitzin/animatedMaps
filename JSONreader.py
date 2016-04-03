@@ -16,3 +16,5 @@ with open(fileName, 'r') as f:
 	json_data = json.load(f)
 
 print "File",fileName,"is now",type(json_data)
+
+print json_data.keys()
