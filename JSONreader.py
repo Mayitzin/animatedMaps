@@ -41,8 +41,9 @@ def listMunicipalities(json_data):
 municList = listMunicipalities(json_data)
 print "There are", len(municList), "Municipalities listed"
 
-repeated = []
+repeated = {}
 for municipality in municList:
-    if municList.count(municipality)>1: repeated.append(municipality)
+    amount = municList.count(municipality)
+    if amount>1: repeated[municipality] = amount
 
-print repeated
+print len(repeated), "municipalities are repeated"
