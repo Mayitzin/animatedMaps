@@ -36,16 +36,18 @@
     <script>
         var svgStates = d3.select("svg #country"); // (1)
 
+        // Get dimensions of Window
         var width = window.innerWidth, // (1)
             height = window.innerHeight;
+        // Set type of Geographic Projection (Albers) and position in window
         var projection = d3.geo.albers()
             .translate([width / 2, 0]);  // (2)
-
+        // Create new geographic path generator with given settings
         var path = d3.geo.path()
             .projection(projection);  // (3)
 
+        // Create request for JSON file with GET method
         d3.json("data/mexbdy.json", function(error, Topology) {  // (4)
-
             // Convert TopoJSON to a GeoJSON object
             var state = topojson.feature(Topology, Topology.objects.mexbdy);  // (5)
 
