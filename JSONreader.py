@@ -9,15 +9,18 @@ www.mayitzin.com
 import json
 import simplejson
 
-# fileName = './data/mexbdy.json'
-fileName = './data/Municipios_2010_5A.json'
+fileName = './data/mexbdy.json'
+# fileName = './data/Municipios_2010_5A.json'
 
 # Read JSON trsing from file and convert into Dictionary
 with open(fileName, 'r') as f:
     json_data = json.load(f)
 
 def printProperties(json_data, state_number=0):
-    print json_data['objects']['mexbdy']['geometries'][state_number]['properties'].keys()
+    print json_data['objects']['mexbdy']['geometries'][state_number]['type']
+    listProps = json_data['objects']['mexbdy']['geometries'][state_number]['properties'].keys()
+    for prop in listProps:
+        print "   ", prop, "=", json_data['objects']['mexbdy']['geometries'][state_number]['properties'][prop]
 
 def listStates(json_data):
     states_list = []
@@ -34,8 +37,8 @@ def listMunicipalities(json_data):
     return municipality_list
 
 
-# # List States
-# print listStates(json_data)
+# List States
+print listStates(json_data)
 
 # List Municipalities
 municList = listMunicipalities(json_data)
