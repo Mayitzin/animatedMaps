@@ -11,6 +11,7 @@ Using [mapShaper](http://www.mapshaper.org/) to convert format of data.
 ## References
 
 - [Extended Geographic Projections](https://github.com/d3/d3-geo-projection/) for D3.js
+- [Mapping with D3](http://maptimeboston.github.io/d3-maptime/#/). A great introduction to mapping with D3. It starts with easy examples about the functionality of D3 and finishes with a nice mapping.
 - [Let's Male a Map](https://bost.ocks.org/mike/map/) tutorial from Mike Bostock to create a map.
 - [Merging Counties](https://bl.ocks.org/mbostock/9867796) example from Mike Bostock.
 - [Merging States II](https://bl.ocks.org/mbostock/5416440) example by Mike Bostock.
